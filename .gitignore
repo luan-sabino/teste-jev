@@ -1,0 +1,21 @@
+# Ambiente
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+
+# Dados
+data/raw/
+data/interim/
+
+# Saidas grandes
+outputs/*
+!outputs/fixtures/
+!outputs/fixtures/**
+!outputs/.gitkeep
+
+# Sistema
+.DS_Store
+Thumbs.db

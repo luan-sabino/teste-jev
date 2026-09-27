@@ -1,0 +1,183 @@
+{
+  "id": "gen-dec-1790464269-AYGt7cVJadwyNALkjM9I",
+  "model": "typesafe/jev-1.13-20260917",
+  "provider": "TypeSafe",
+  "answers": {
+    "nome_valido": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "nome_genero": {
+      "type": "choice",
+      "choice": "masculino",
+      "probabilities": {
+        "indeterminado": 0.09,
+        "feminino": 0.0,
+        "masculino": 0.91
+      },
+      "confidence": 0.86
+    },
+    "nome_apelido": {
+      "type": "noul",
+      "noul": 0.04
+    },
+    "nome_caixa": {
+      "type": "choice",
+      "choice": "correto",
+      "probabilities": {
+        "tudo_minusculo": 0.0,
+        "correto": 0.99,
+        "tudo_maiusculo": 0.0,
+        "misto_anomalo": 0.01
+      },
+      "confidence": 0.98
+    },
+    "nome_invalido": {
+      "type": "noul",
+      "noul": 0.05
+    },
+    "email_provider": {
+      "type": "choice",
+      "choice": "yahoo",
+      "probabilities": {
+        "invalido": 0.0,
+        "descartavel": 0.0,
+        "gmail": 0.0,
+        "isp": 0.0,
+        "corporativo": 0.0,
+        "yahoo": 1.0,
+        "outlook_hotmail": 0.0
+      },
+      "confidence": 0.99
+    },
+    "email_typo": {
+      "type": "noul",
+      "noul": 0.16
+    },
+    "email_bate_nome": {
+      "type": "noul",
+      "noul": 0.54
+    },
+    "email_tipo": {
+      "type": "choice",
+      "choice": "pessoal",
+      "probabilities": {
+        "indeterminado": 0.0,
+        "corporativo": 0.0,
+        "pessoal": 1.0
+      },
+      "confidence": 1.0
+    },
+    "carro_marca": {
+      "type": "choice",
+      "choice": "fiat",
+      "probabilities": {
+        "toyota": 0.0,
+        "jeep": 0.0,
+        "renault": 0.0,
+        "fiat": 1.0,
+        "hyundai": 0.0,
+        "volkswagen": 0.0,
+        "chevrolet": 0.0,
+        "outra": 0.0
+      },
+      "confidence": 1.0
+    },
+    "carro_carroceria": {
+      "type": "choice",
+      "choice": "hatch",
+      "probabilities": {
+        "picape": 0.0,
+        "outro": 0.0,
+        "hatch": 0.99,
+        "suv": 0.0,
+        "sedan": 0.01
+      },
+      "confidence": 0.98
+    },
+    "carro_cambio": {
+      "type": "choice",
+      "choice": "manual",
+      "probabilities": {
+        "indeterminado": 0.0,
+        "automatico": 0.0,
+        "manual": 1.0
+      },
+      "confidence": 1.0
+    },
+    "carro_combustivel": {
+      "type": "choice",
+      "choice": "indeterminado",
+      "probabilities": {
+        "indeterminado": 0.54,
+        "gasolina": 0.05,
+        "diesel": 0.0,
+        "eletrico": 0.0,
+        "flex": 0.41,
+        "hibrido": 0.0
+      },
+      "confidence": 0.44
+    },
+    "carro_tier": {
+      "type": "score",
+      "score": 0.0,
+      "legend": {
+        "0": "Entrada: compactos de acesso (ex.: Mobi, Kwid, Argo Drive).",
+        "1": "Intermediario: compactos medios e sedans/SUVs populares (ex.: Polo, Onix, Creta).",
+        "2": "Premium: marcas/modelos de luxo ou alto valor (ex.: BMW, Audi, Jeep Compass topo)."
+      },
+      "probabilities": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "confidence": 1.0
+    },
+    "carro_cor": {
+      "type": "choice",
+      "choice": "cinza",
+      "probabilities": {
+        "branco": 0.0,
+        "preto": 0.0,
+        "prata": 0.09,
+        "azul": 0.0,
+        "cinza": 0.91,
+        "outra": 0.0,
+        "vermelho": 0.0
+      },
+      "confidence": 0.89
+    },
+    "carro_coerente": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "qual_bot": {
+      "type": "noul",
+      "noul": 0.25
+    },
+    "qual_score": {
+      "type": "score",
+      "score": 2.71,
+      "legend": {
+        "0": "0 = Inutilizavel: dados vazios ou totalmente incoerentes.",
+        "1": "1 = Ruim: multiplos campos invalidos ou suspeitos.",
+        "2": "2 = Regular: dados parcialmente validos, com problemas visiveis.",
+        "3": "3 = Bom: dados coerentes e plausiveis.",
+        "4": "4 = Excelente: dados completos, coerentes e bem formatados."
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.02,
+        "2": 0.27,
+        "3": 0.68,
+        "4": 0.03
+      },
+      "confidence": 0.71
+    }
+  },
+  "usage": {
+    "input_tokens": 2689,
+    "output_tokens": 722,
+    "cost": 0.000112938
+  }
+}

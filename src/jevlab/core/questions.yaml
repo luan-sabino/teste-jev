@@ -1,0 +1,208 @@
+# Contrato de enriquecimento do JEV Leads Lab.
+# Mudancas aqui exigem bump de `version` (invalida o cache).
+version: 1
+language: pt-BR
+description: >
+  Catalogo de perguntas do JEV para enriquecer leads (nomes, e-mails, carros e
+  qualidade/fraude). Todas as referencias a campos usam crases e apontam para o
+  objeto `state` canonico montado por state_builder.py.
+
+questions:
+  # ---------------------------------------------------------------- Ideia 1: Nomes
+  nome_valido:
+    type: noul
+    instructions: >
+      O valor em `nome` e um nome plausivel de pessoa fisica (nome e/ou
+      sobrenome reais), e nao um texto generico, razao social, apelido solto ou
+      campo vazio?
+    criteria:
+      "true": "Parece um nome real de pessoa fisica."
+      "false": "Nao parece nome de pessoa (generico, vazio, placeholders, empresa)."
+
+  nome_genero:
+    type: choice
+    instructions: >
+      Qual genero e mais provavel para o primeiro nome em `nome`? Use
+      `indeterminado` quando o nome for unissex ou nao permitir inferencia.
+    criteria:
+      masculino: "Nome tipicamente masculino (ex.: Joao, Carlos, Marcos)."
+      feminino: "Nome tipicamente feminino (ex.: Maria, Ana, Juliana)."
+      indeterminado: "Nome unissex, estrangeiro ou sem sinal claro."
+
+  nome_apelido:
+    type: noul
+    instructions: >
+      O valor em `nome` parece um apelido, abreviacao ou nome incompleto
+      (ex.: um unico primeiro nome curto, iniciais, 'Ze', 'Bia')?
+    criteria:
+      "true": "Parece apelido, abreviacao ou nome incompleto."
+      "false": "Parece nome completo ou pelo menos nome + sobrenome."
+
+  nome_caixa:
+    type: choice
+    instructions: >
+      Como esta a capitalizacao de `nome`? Considere `correto` a capitalizacao
+      padrao de nomes proprios (primeira letra de cada palavra maiuscula).
+    criteria:
+      correto: "Capitalizacao normal (ex.: 'Joao Marcelo Romano')."
+      tudo_maiusculo: "Todas as letras maiusculas (ex.: 'JOAO MARCELO')."
+      tudo_minusculo: "Todas as letras minusculas (ex.: 'joao marcelo')."
+      misto_anomalo: "Mistura anomala, como caixa aleatoria ou camelCase."
+
+  nome_invalido:
+    type: noul
+    instructions: >
+      O valor em `nome` contem sinais de teste, placeholder ou lixo
+      (ex.: 'teste', 'asdf', 'xxx', digitos, caracteres repetidos)?
+    criteria:
+      "true": "Tem sinais claros de teste, placeholder ou lixo."
+      "false": "Nao tem sinais de teste ou placeholder."
+
+  # --------------------------------------------------------------- Ideia 2: E-mails
+  email_provider:
+    type: choice
+    instructions: >
+      Qual o provedor do e-mail em `email`? Use `corporativo` para dominios
+      proprios de empresas e `isp` para provedores regionais/nacionais
+      (ex.: uol, terra, bol, ig). Use `invalido` se o e-mail for malformado.
+    criteria:
+      gmail: "Google Gmail (gmail.com / googlemail.com)."
+      outlook_hotmail: "Microsoft (outlook, hotmail, live, msn)."
+      yahoo: "Yahoo (yahoo.com, yahoo.com.br, ymail)."
+      corporativo: "Dominio proprio de empresa ou organizacao."
+      isp: "Provedor de acesso/portal regional (uol, terra, bol, ig, etc.)."
+      descartavel: "Servico de e-mail temporario/descartavel."
+      invalido: "Endereco malformado ou vazio."
+
+  email_typo:
+    type: noul
+    instructions: >
+      O local-part de `email` (antes do @) parece conter erro de digitacao ou
+      transposicao de letras, considerando `nome`?
+    criteria:
+      "true": "Ha forte indicio de erro de digitacao."
+      "false": "Nao ha indicio claro de erro de digitacao."
+
+  email_bate_nome:
+    type: noul
+    instructions: >
+      O local-part de `email` e compativel com o nome em `nome` (contem
+      nome/sobrenome, iniciais coerentes ou variacao plausivel)?
+    criteria:
+      "true": "Local-part compativel com o nome."
+      "false": "Local-part sem relacao plausivel com o nome."
+
+  email_tipo:
+    type: choice
+    instructions: >
+      O e-mail em `email` e pessoal ou corporativo? Considere dominios de
+      empresa/organizacao como corporativo.
+    criteria:
+      pessoal: "Conta pessoal (gmail, outlook, yahoo, isp, etc.)."
+      corporativo: "Conta vinculada a empresa/organizacao."
+      indeterminado: "Nao e possivel determinar."
+
+  # ---------------------------------------------------------------- Ideia 4: Carros
+  carro_marca:
+    type: choice
+    instructions: >
+      Qual a marca do veiculo descrito em `carro`? Use `outra` para marcas fora
+      da lista ou quando nao for possivel identificar.
+    criteria:
+      fiat: "Fiat."
+      volkswagen: "Volkswagen / VW."
+      renault: "Renault."
+      chevrolet: "Chevrolet / GM."
+      toyota: "Toyota."
+      hyundai: "Hyundai."
+      jeep: "Jeep."
+      outra: "Outra marca ou marca indeterminada."
+
+  carro_carroceria:
+    type: choice
+    instructions: >
+      Qual o tipo de carroceria do veiculo em `carro`?
+    criteria:
+      hatch: "Hatch (compacto de duas volumes)."
+      sedan: "Sedan (tres volumes com porta-malas separado)."
+      suv: "SUV (utilitario esportivo)."
+      picape: "Picape/caminhonete com cacamba."
+      outro: "Outra carroceria ou indeterminada."
+
+  carro_cambio:
+    type: choice
+    instructions: >
+      Qual o tipo de cambio do veiculo em `carro`? Procure siglas como AT, MT,
+      CVT, automatizado. Use `indeterminado` se nao houver indicio.
+    criteria:
+      manual: "Cambio manual (MT)."
+      automatico: "Cambio automatico/automatizado/CVT (AT, CVT, Aisin, etc.)."
+      indeterminado: "Nao e possivel determinar."
+
+  carro_combustivel:
+    type: choice
+    instructions: >
+      Qual o combustivel do veiculo em `carro`? Use `indeterminado` se nao
+      houver indicio no texto.
+    criteria:
+      flex: "Flex (gasolina e etanol)."
+      gasolina: "Somente gasolina."
+      diesel: "Diesel."
+      eletrico: "Eletrico."
+      hibrido: "Hibrido."
+      indeterminado: "Nao e possivel determinar."
+
+  carro_tier:
+    type: score
+    instructions: >
+      Qual o posicionamento de valor do veiculo em `carro` no mercado
+      brasileiro (entrada, intermediario ou premium)?
+    criteria:
+      - "Entrada: compactos de acesso (ex.: Mobi, Kwid, Argo Drive)."
+      - "Intermediario: compactos medios e sedans/SUVs populares (ex.: Polo, Onix, Creta)."
+      - "Premium: marcas/modelos de luxo ou alto valor (ex.: BMW, Audi, Jeep Compass topo)."
+
+  carro_cor:
+    type: choice
+    instructions: >
+      Qual a cor normalizada do veiculo em `carro`?
+    criteria:
+      branco: "Branco."
+      preto: "Preto."
+      prata: "Prata."
+      cinza: "Cinza."
+      azul: "Azul."
+      vermelho: "Vermelho."
+      outra: "Outra cor ou indeterminada."
+
+  carro_coerente:
+    type: noul
+    instructions: >
+      O modelo descrito em `carro` e coerente com a marca inferida
+      (ex.: 'Fiat Argo' e coerente; 'Fiat Corolla' nao e)?
+    criteria:
+      "true": "Modelo coerente com a marca."
+      "false": "Modelo incoerente com a marca ou nao identificavel."
+
+  # ------------------------------------------------------ Ideia 6: Fraude / Qualidade
+  qual_bot:
+    type: noul
+    instructions: >
+      O registro como um todo (`nome`, `email`, `telefone`, `carro`, `km`)
+      parece submissao automatica, teste ou bot (padroes repetidos, dados
+      sequenciais, placeholders)?
+    criteria:
+      "true": "Ha sinais claros de submissao de teste/bot."
+      "false": "Parece um lead humano legitimo."
+
+  qual_score:
+    type: score
+    instructions: >
+      Qual a qualidade geral do registro, considerando consistencia entre nome,
+      e-mail, telefone e veiculo, e sinais de dados invalidos?
+    criteria:
+      - "0 = Inutilizavel: dados vazios ou totalmente incoerentes."
+      - "1 = Ruim: multiplos campos invalidos ou suspeitos."
+      - "2 = Regular: dados parcialmente validos, com problemas visiveis."
+      - "3 = Bom: dados coerentes e plausiveis."
+      - "4 = Excelente: dados completos, coerentes e bem formatados."
