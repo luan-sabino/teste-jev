@@ -1,0 +1,21 @@
+lead_key,nome,email_display,carro,pred_nome_genero,pred_email_provider,pred_carro_marca,manual_nome_genero,manual_email_provider,manual_carro_marca
+cpf:10000310808,valter luiz esteves,b***@gmail.com,Volkswagen Tera High 1.0 TSI AT Preto Ninja,masculino,gmail,volkswagen,masculino,gmail,volkswagen
+cpf:10000482765,THIAGO SILVA DE SANTANA,t***@gmail.com,Renault Kwid Intense 1.0 MT Branco Glacier,masculino,gmail,renault,masculino,gmail,renault
+cpf:10000520608,OTAVIO AUGUSTO GONCALVES SANTOS,m***@gmail.com,Fiat Argo Drive 1.0 MT Preto Vulcano,masculino,gmail,fiat,masculino,gmail,fiat
+cpf:10000704920,Juan Alberto Huerta Navarro,j***@gmail.com,Volkswagen T-Cross TSI 200 Aut. Azul Norway,masculino,gmail,volkswagen,masculino,gmail,volkswagen
+cpf:10001729616,Andreia Malaquias,a***@gmaol.com,Volkswagen Polo Robust 1.0 MT Preto Ninja,feminino,invalido,volkswagen,feminino,invalido,volkswagen
+cpf:10001812947,Thiago Mazzo,t***@gmail.com,Volkswagen Nivus Highline 1.0 200 TSI Aut. Azul Turbo,masculino,gmail,volkswagen,masculino,gmail,volkswagen
+cpf:10001832115,Daianna Santos Mello,d***@gmail.com,Volkswagen Tera Comfort 1.0 TSI AT Prata Lunar,feminino,gmail,volkswagen,feminino,gmail,volkswagen
+cpf:10001896946,Jean Carlos de Oliveira,j***@gmail.com,Volkswagen Polo Highline 1.0 170 TSI AT Branco Cristal,masculino,gmail,volkswagen,masculino,gmail,volkswagen
+cpf:10002063603,DIEGO MONTEIRO GONZAGA,d***@gmail.com,Chevrolet Onix Plus 1.0 MT Prata Shark,masculino,gmail,chevrolet,masculino,gmail,chevrolet
+cpf:10002542757,Leonardo Alexandre Almeida,l***@hotmail.com,Volkswagen Tera MPI 1.0 MT Preto Ninja,masculino,outlook_hotmail,volkswagen,masculino,outlook_hotmail,volkswagen
+cpf:10002556707,Isac José da Silva Jorge,i***@gmail.com,Hyundai HB20 Comfort 1.0 MT Cinza Silk,masculino,gmail,hyundai,masculino,gmail,hyundai
+cpf:10003108929,MANOEL MATHEUS NISTCHE,m***@gmail.com,Volkswagen Polo Robust 1.0 MT Branco Cristal,masculino,gmail,volkswagen,masculino,gmail,volkswagen
+cpf:10003719723,THIAGO DA SILVA BEZERRA,t***@gmail.com,Fiat Argo Drive 1.0 MT Cinza Silverstone,masculino,gmail,fiat,masculino,gmail,fiat
+cpf:10005131731,THIAGO BARBOSA DOS SANTOS,t***@outlook.com,Renault Kwid Intense 1.0 MT Branco Glacier,masculino,outlook_hotmail,renault,masculino,outlook_hotmail,renault
+cpf:10005725950,Marcos Eduardo Ribas Pereira,k***@gmail.com,Volkswagen Tera Comfort 1.0 TSI AT Azul Artic,masculino,gmail,volkswagen,masculino,gmail,volkswagen
+cpf:10006105866,joao Laercio Sclearuc,r***@gmail.comr,Renault Kwid Intense 1.0 MT Preto Nacré,masculino,invalido,renault,masculino,invalido,renault
+cpf:10006579655,Igor Guerra Rocha,i***@gmail.com,Volkswagen T-Cross TSI 200 Aut. Preto Ninja,masculino,gmail,volkswagen,masculino,gmail,volkswagen
+cpf:10007964773,Rodrigo Guimarães,r***@gmail.com,Volkswagen Polo Highline 1.0 170 TSI AT Preto Ninja,masculino,gmail,volkswagen,masculino,gmail,volkswagen
+cpf:10009210423,Jonatas Cunha,c***@gmail.com,Volkswagen Polo Robust 1.0 MT Branco Cristal,masculino,gmail,volkswagen,masculino,gmail,volkswagen
+cpf:10009905677,Gustavo marques da Silva,g***@gmail.com,Volkswagen Polo Highline 1.0 170 TSI AT Preto Ninja,masculino,gmail,volkswagen,masculino,gmail,volkswagen
